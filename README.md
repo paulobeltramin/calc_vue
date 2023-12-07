@@ -1,5 +1,8 @@
 # calc-vue
 
+SEGUE LINK PARA ACESSO AO PROJETO:
+https://calc-vue-psi.vercel.app/
+
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
@@ -27,3 +30,6 @@ npm run dev
 ```sh
 npm run build
 ```
+
+
+
