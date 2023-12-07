@@ -1,5 +1,57 @@
 <script setup>
-  
+import { reactive } from 'vue';
+
+
+const estado = reactive({
+    value2: "",
+    value1: "",
+    result: "",
+    calculation: "somar",
+
+
+})
+
+// function filter
+const setFilter = (event) => {
+    return estado.calculation = event.target.value
+}
+
+
+//    input 1
+const valueOne = (event) => {
+    return estado.value1 = estado.result = event.target.value
+
+}
+//  input2
+const valueTwo = (event) => {
+    return estado.value2 = estado.result = event.target.value
+
+}
+
+// function calculation
+const getCalcFilter = () => {
+    const filtro = estado.calculation;
+
+    switch (filtro) {
+        case "somar":
+            return estado.value1 + estado.value2;
+
+        case "subtrair":
+            return estado.value1 - estado.value2;
+
+        case "multiplicar":
+            return estado.value1 * estado.value2;
+
+        case "dividir":
+
+            return estado.value1 / estado.value2
+
+        default:
+
+    }
+
+
+}
 
 </script>
 
@@ -11,14 +63,14 @@
             <form class="d-flex  flex-column align-items-center">
 
                 <div class=" w-50 mb-4 bg-black text-center text-white p-3 fs-4">
-                    1250
+                    {{ getCalcFilter() }}
                 </div>
 
                 <div class="col">
-                    <input class="form-control w-100 mb-4" type="number" placeholder="digite o valor 1">
-                    <input class="form-control w-100 " type="number" placeholder="digite o valor 2">
+                    <input class="form-control w-100 mb-4" type="number" placeholder="digite o valor 1" @keyup="valueOne">
+                    <input class="form-control w-100 " type="number" placeholder="digite o valor 2" @keyup="valueTwo">
 
-                    <select class="bg-black text-white fw-bold p-1 mt-4">
+                    <select class="bg-black text-white fw-bold p-1 mt-4" @change="setFilter">
                         <option value="somar">Somar</option>
                         <option value="subtrair">Subtrair</option>
                         <option value="multiplicar">Multiplicar</option>
