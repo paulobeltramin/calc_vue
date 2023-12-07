@@ -1,6 +1,6 @@
 <script setup>
 import { reactive } from 'vue';
-import Forms from "./components/Forms.vue"
+import Forms from "./components/Forms.vue";
 
 const state = reactive({
 
@@ -12,12 +12,12 @@ const state = reactive({
 
     result: "0",
 
-})
+});
 
 // function filter
 const filterSelect = (event) => {
     return state.calculation = event.target.value
-}
+};
 
 
 //    input 1
@@ -25,13 +25,13 @@ const oneValue = (event) => {
     return state.result = state.value1 = event.target.value
 
 
-}
+};
 //  input2
 const twoValue = (event) => {
     return state.result = state.value2 = event.target.value;
 
 
-}
+};
 
 // function calculation
 const setCalcFilter = () => {
@@ -52,9 +52,9 @@ const setCalcFilter = () => {
 
         default:
 
-    }
+    };
 
-}
+};
 
 </script>
 
